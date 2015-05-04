@@ -44,3 +44,15 @@
   principal, and r is the interest rate"
   [f p r]
   (/ (log (/ f p)) (log (+ 1 r))))
+
+(defn rate
+  "Returns the simple interest rate. f is the future value, p is the principal,
+  and t is times"
+  [f p t]
+  (/ (- (/ f p) 1) t))
+
+(defn rate+
+  "Returns the compound interest rate. f is the future value, p is the principal,
+  and t is times"
+  [f p t]
+  (- (pow (/ f p) (/ 1 t)) 1))
