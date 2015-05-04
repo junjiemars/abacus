@@ -1,17 +1,21 @@
 (ns abacus.core)
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defn pow
+    "Returns the value with the a raised to the power of the b"
+  [a b]
+  (Math/pow a b))
 
-(defn exp [x n]
-  (reduce * (repeat n x)))
+(defn future-value
+  "Returns the future value using simple interest. p is the principal, r is the
+  interest rate, and t is the time"
+  [p r t]
+  (* p (+ 1 (* r t))))
 
-(defn R0 [c r t]
-  (* c (+ 1 (* (/ r 365) t))))
+(defn future-value+
+  "Returns the future value using add-on interest. p is the principal, r is the
+  interest rate, and t is the time"
+  [p r t]
+  (* p (pow (+ 1 r) t)))
 
-(defn R1 [c r t]
-  (* c (exp (+ 1 (/ r 365)) t)))
 
 
