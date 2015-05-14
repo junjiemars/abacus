@@ -1,11 +1,12 @@
 (ns abacus.core)
 
 (defn pow
-    "Returns the value with the a raised to the power of the b"
+  "Returns the value with the a raised to the power of the b"
   [a b]
   (Math/pow a b))
 
 (defn log
+  "Returns the base 10 logarithm of a"
   [a]
   (Math/log10 a))
 
@@ -37,7 +38,7 @@
   "Returns the times using simple interest. f is the future value, p is the 
   principal, and r is the interest rate"
   [f p r]
-  (/ (log (/ f p)) (log (+ 1 r))))
+  (/ (- (/ f p) 1) r))
 
 (defn times+
   "Returns the times using compound interest. f is the future value, p is the
