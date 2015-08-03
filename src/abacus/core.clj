@@ -10,6 +10,18 @@
   [a]
   (Math/log10 a))
 
+(defn interest
+  "Return the earned simple interest, p is the pricipal, r is the 
+  interest rate, and t is times"
+  [p r t]
+  (* p r t))
+
+(defn interest+
+  "Return the earned compound interest, p is the pricipal, r is the
+  interest rate, and t is times"
+  [p r t]
+  (- (future-value+ p r t) p))
+
 (defn future-value
   "Returns the future value using simple interest. p is the principal, r is the
   interest rate, and t is the times"
