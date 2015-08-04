@@ -16,12 +16,6 @@
   [p r t]
   (* p r t))
 
-(defn interest+
-  "Return the earned compound interest, p is the pricipal, r is the
-  interest rate, and t is times"
-  [p r t]
-  (- (future-value+ p r t) p))
-
 (defn future-value
   "Returns the future value using simple interest. p is the principal, r is the
   interest rate, and t is the times"
@@ -33,6 +27,12 @@
   interest rate, and t is the times"
   [p r t]
   (* p (pow (+ 1 r) t)))
+
+(defn interest+
+  "Return the earned compound interest, p is the pricipal, r is the
+  interest rate, and t is times"
+  [p r t]
+  (- (future-value+ p r t) p))
 
 (defn present-value
   "Returns the present value using simple interest. f is the future value, r is 
